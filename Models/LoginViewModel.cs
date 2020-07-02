@@ -15,7 +15,7 @@ namespace ASP_Applications.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password{ get; set; }
-        [Display(Name ="Remeber me")]
-        public bool RemeberMe { get; set; }
+        [Display(Name ="Remember me")]
+        public bool RememberMe { get; set; }
     }
 }

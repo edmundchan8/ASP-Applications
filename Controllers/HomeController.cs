@@ -9,16 +9,12 @@ namespace ASP_Applications.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Home
-        public ActionResult Login()
-        {
-            return View();
-        }
 
         // GET: Home/Details/5
         public ActionResult Details(int id)
