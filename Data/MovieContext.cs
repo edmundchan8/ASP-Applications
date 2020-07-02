@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using ASP_Applications.Models;
 
-namespace ASP_Applications.Models
+namespace ASP_Applications.Data
 {
     public class MovieContext : DbContext
     {
@@ -13,6 +14,6 @@ namespace ASP_Applications.Models
         {
         }
 
-        public DbSet<ASP_Applications.Models.Movie> Movie { get; set; }
+        public DbSet<Movie> Movie { get; set; }
     }
 }

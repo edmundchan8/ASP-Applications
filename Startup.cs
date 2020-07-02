@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ASP_Applications.Models;
+using ASP_Applications.Data;
 
 namespace ASP_Applications
 {
