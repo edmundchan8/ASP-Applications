@@ -17,5 +17,6 @@ namespace ASP_Applications.Models
         public string Genre { get; set; }
         [Column(TypeName = "decimal(18,2)")] // Helps EF Core to correctly map Price to currency in database
         public decimal Price { get; set; }
+        public string Rating { get; set; }
     }
 }
