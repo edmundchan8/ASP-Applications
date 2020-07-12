@@ -32,11 +32,12 @@ namespace ASP_Applications
                     options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
 
             services.AddDbContext<AppIdentityDbContext>(options => 
-                options.UseSqlServer(Configuration["Data:ASP_Applications:Connection-String"]));
+                options.UseSqlServer(Configuration.GetConnectionString("ASP_Applications")));
 
             services.AddDbContext<AppIdentityDbContext>(options =>
-                options.UseSqlServer(Configuration["Data:AppIdentity:Connection-String"]));
+                options.UseSqlServer(Configuration.GetConnectionString("AppIdentity")));
 
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
