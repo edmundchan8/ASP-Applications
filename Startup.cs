@@ -29,6 +29,13 @@ namespace ASP_Applications
 
             services.AddDbContext<MovieContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
+
+            services.AddDbContext<AppIdentityDbContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("ASP_Applications")));
+
+            services.AddDbContext<AppIdentityDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("AppIdentity")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
