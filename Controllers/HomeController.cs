@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,11 @@ namespace ASP_Applications.Controllers
             ViewData["Message"] = "Hello " + name;
             ViewData["NumTimes"] = numTimes;
 
+            return View();
+        }
+        [Authorize]
+        public IActionResult Secret() 
+        {
             return View();
         }
     }
