@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ASP_Applications.Models;
 using ASP_Applications.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace ASP_Applications
 {
@@ -31,10 +32,10 @@ namespace ASP_Applications
                     options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
 
             services.AddDbContext<AppIdentityDbContext>(options => 
-                options.UseSqlServer(Configuration.GetConnectionString("ASP_Applications")));
+                options.UseSqlServer(Configuration["Data:ASP_Applications:Connection-String"]));
 
             services.AddDbContext<AppIdentityDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("AppIdentity")));
+                options.UseSqlServer(Configuration["Data:AppIdentity:Connection-String"]));
 
         }
 
