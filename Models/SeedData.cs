@@ -4,6 +4,8 @@ using ASP_Applications.Data;
 using System;
 using System.Linq;
 using ASP_Applications.Models;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 
 namespace MvcMovie.Models
 {
@@ -60,6 +62,19 @@ namespace MvcMovie.Models
                     }
                 );
                 context.SaveChanges();
+            }
+        }
+
+        private const string adminUser = "admin@mail.com";
+        private const string adminPassword = "Secret123$";
+        public static async void EnsurePopulated(IApplicationBuilder app)
+        {
+            UserManager<IdentityUser> userManager = app.ApplicationServices.GetRequiredService<UserManager<IdentityUser>>();
+            IdentityUser user = await userManager.FindByIdAsync(adminUser);
+            if (user == null)
+            {
+                user = new IdentityUser("Admin");
+                await userManager.CreateAsync(user, adminPassword);
             }
         }
     }

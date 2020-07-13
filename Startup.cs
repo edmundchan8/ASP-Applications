@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using ASP_Applications.Models;
 using ASP_Applications.Data;
 using Microsoft.AspNetCore.Identity;
+using MvcMovie.Models;
 
 namespace ASP_Applications
 {
@@ -63,6 +64,7 @@ namespace ASP_Applications
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            SeedData.EnsurePopulated(app);
         }
     }
 }
