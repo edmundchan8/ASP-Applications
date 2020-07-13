@@ -63,8 +63,17 @@ namespace MvcMovie.Models
                 );
                 context.SaveChanges();
             }
+
+            /*using (var userContext = new AppIdentityDbContext(
+                serviceProvider.GetRequiredService<
+                    DbContextOptions<AppIdentityDbContext>>()))
+            {
+                userContext.Add (
+                    new User)
+            }*/
         }
 
+        /*
         private const string adminUser = "admin@mail.com";
         private const string adminPassword = "Secret123$";
         public static async void EnsurePopulated(IApplicationBuilder app)
@@ -76,6 +85,6 @@ namespace MvcMovie.Models
                 user = new IdentityUser("Admin");
                 await userManager.CreateAsync(user, adminPassword);
             }
-        }
+        }*/
     }
 }
